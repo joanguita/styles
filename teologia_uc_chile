@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="note" default-locale="es-ES">
   <info>
-    <title>Norma de presentación de referencias bibliográficas de la Facultad de Teología | UC Chile</title>
-    <id>http://www.zotero.org/styles/teologia_uc_chile</id>
-    <link href="http://www.zotero.org/styles/teologia_uc_chile" rel="self"/>
+    <title>Pontificia Universidad Católica de Chile - Facultad de Teología (Español)</title>
+    <id>http://www.zotero.org/styles/teologia-uc-chile</id>
+    <link href="http://www.zotero.org/styles/teologia-uc-chile" rel="self"/>
     <link href="https://guiastematicas.bibliotecas.uc.cl/teologia_uc_chile" rel="documentation"/>
 
     <author>
-      <name>Xavier Morales</name>
-      <email>xavier.morales@uc.cl</email>
+      <name>Xavier Morales y José Anguita-González</name>
+      <email>xavier.morales@uc.cl; joanguita@uc.cl</email>
     </author>
     <category citation-format="note"/>
     <category field="theology"/>
-    <summary>Norma de presentación de cita y referencias bibliográficas de la Facultad de Teología de la Pontificia Universidad Católica de Chile, basado en la Guía de la Monografía Teológica UC (2021, pp.19-22) para trabajos de investigación de pre y postgrado</summary>
-    <updated>2026-07-14T13:00:00-00:00</updated>
-    <rights license="https://creativecommons.org/licenses/by-sa/4.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 License</rights>
+    <summary>Norma de presentación de cita y referencias bibliográficas de la Facultad de Teología de la Pontificia Universidad Católica de Chile, basado en la Guía de la Monografía Teológica UC (2021, pp.19-22) para trabajos de investigación de la Facultad de Teología</summary>
+    <updated>2026-09-28T00:00:00+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
-  
+
 <macro name="publisher-loc-edition-date">
   <group prefix=" (" suffix=")">
     <group delimiter="; ">
@@ -50,26 +50,6 @@
 </macro>
 
   <!-- Macros comunes -->
-
-  <macro name="author">
-  <names variable="author">
-
-    <name form="long" and="text" delimiter=" " initialize-with=".">
-      <name-part name="given"/>
-      <name-part name="family" font-variant="small-caps"/>
-    </name>
-    <label form="short" prefix=" y " strip-periods="true"/>
-  </names>
-  </macro>
-
-  <macro name="author-note">
-    <names variable="author">
-    <name form="long" and="text" delimiter=" " initialize-with=".">
-    <name-part name="given"/>
-    <name-part name="family" font-variant="small-caps"/>
-  </name>
-  </names>
-  </macro>
 
     <macro name="author-with-role">
       <choose>
@@ -122,7 +102,7 @@
 
 <macro name="short-author">
   <choose>
-    <!-- Artículos de revista: F. VERDUGO -->
+    <!-- Artículos de revista -->
     <if type="article-journal">
       <names variable="author">
         <name and="text" delimiter=" " initialize-with="." form="long">
@@ -132,7 +112,7 @@
       </names>
     </if>
 
-    <!-- Libros y capítulos:  -->
+    <!-- Libros y capítulos: -->
     <else-if type="book chapter" match="any">
       <names variable="author">
         <name form="short" font-variant="small-caps"/>
@@ -170,7 +150,7 @@
     <text variable="original-title" prefix=" [" suffix="]"/>
   </macro>
 
-  
+
   <macro name="editor">
     <names variable="editor">
       <name and="text" delimiter=", " name-as-sort-order="all"/>
@@ -236,20 +216,6 @@
     </choose>
   </macro>
 
-  <macro name="publisher">
-    <group delimiter=", ">
-      <text variable="publisher"/>
-      <text variable="publisher-place"/>
-    </group>
-  </macro>
-
-
-  <macro name="issued">
-    <date variable="issued">
-      <date-part name="year"/>
-    </date>
-  </macro>
-
   <macro name="pages">
     <text variable="page"/>
   </macro>
@@ -276,7 +242,8 @@
       <key variable="author"/>
       <key variable="issued"/>
     </sort>
-    <layout suffix=".">
+    <!-- delimiter="; " separa las citas múltiples dentro de una misma nota -->
+    <layout suffix="." delimiter="; ">
       <choose>
         <if position="subsequent">
           <group delimiter=", ">
@@ -290,7 +257,7 @@
           <choose>
 
           <!-- Si es article-journal -->
- 
+
              <if type="article-journal">
               <group delimiter=", ">
                 <text macro="author-with-role"/>
@@ -435,5 +402,3 @@
 </locale>
 
 </style>
-
-
